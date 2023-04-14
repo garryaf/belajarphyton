@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pemindai Alamat IP LAN</title>
+  </head>
+  <body>
+    <h1>Pemindai Alamat IP LAN</h1>
+    <form action="/scan_ips" method="POST">
+      <label for="subnet">Alamat IP subnet:</label>
+      <input type="text" name="subnet" value="192.168.0.">
+      <br><br>
+      <label for="start">Nomor IP awal:</label>
+      <input type="number" name="start" value="1">
+      <br><br>
+      <label for="end">Nomor IP akhir:</label>
+      <input type="number" name="end" value="255">
+      <br><br>
+      <input type="submit" value="Pindai">
+    </form>
+  </body>
+</html>

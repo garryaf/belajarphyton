@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hasil Pemindaian Alamat IP LAN</title>
+  </head>
+  <body>
+    <h1>Hasil Pemindaian Alamat IP LAN</h1>
+    {% if active_ips %}
+      <p>Alamat IP berikut ini aktif:</p>
+      <ul>
+        {% for ip in active_ips %}
+          <li>{{ ip }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Tidak ada alamat IP yang aktif dalam rentang yang diberikan.</p>
+    {% endif %}
+    <a href="/">Kembali ke halaman beranda</a>
+  </body>
+</html>
