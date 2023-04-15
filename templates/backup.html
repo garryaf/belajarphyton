@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backup Results</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			padding: 20px;
+		}
+
+		h1 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		p {
+			margin-bottom: 10px;
+		}
+
+		.success {
+			color: green;
+			font-weight: bold;
+		}
+
+		.error {
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Backup Results</h1>
+	{% if folder_name %}
+		<p class="success">Backup created successfully!</p>
+		<p>Backup folder name: <strong>{{ folder_name }}</strong></p>
+	{% else %}
+		<p class="error">Error creating backup folder.</p>
+	{% endif %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Backup Otomatis Database</title>
+    <script src="{{ url_for('static', filename='onclic.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Backup Otomatis Database</h1>
+    <form action="/backup" method="post" onsubmit="return validateForm()">
+        <label for="database_name">Nama Database:</label><br>
+        <input type="text" id="database_name" name="database_name" required><br>
+
+        <label for="host_name">Host Database:</label><br>
+        <input type="text" id="host_name" name="host_name" required><br>
+
+        <label for="backup_frequency_days">Backup setiap berapa hari:</label><br>
+        <input type="number" id="backup_frequency_days" name="backup_frequency_days" min="0" required><br>
+
+        <label for="backup_frequency_weeks">Backup setiap berapa minggu:</label><br>
+        <input type="number" id="backup_frequency_weeks" name="backup_frequency_weeks" min="0" required><br>
+
+        <label for="backup_frequency_months">Backup setiap berapa bulan:</label><br>
+        <input type="number" id="backup_frequency_months" name="backup_frequency_months" min="0" required><br>
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password" required><br>
+
+        <div class="button-container">
+            <button type="button" onclick="testConnection()">Test Connection</button>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
