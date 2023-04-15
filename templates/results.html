@@ -1,20 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Hasil Pemindaian Alamat IP LAN</title>
+    <meta charset="UTF-8">
+    <title>Scan Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <h1>Hasil Pemindaian Alamat IP LAN</h1>
+    <h1>Scan Results</h1>
     {% if active_ips %}
-      <p>Alamat IP berikut ini aktif:</p>
-      <ul>
+    <table>
+      <thead>
+        <tr>
+          <th>IP Address</th>
+          <th>Open Ports</th>
+        </tr>
+      </thead>
+      <tbody>
         {% for ip in active_ips %}
-          <li>{{ ip }}</li>
+        <tr>
+          <td>{{ ip }}</td>
+          <td>
+            <ul>
+              {% for port in active_ports[ip] %}
+              <li>{{ port }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
         {% endfor %}
-      </ul>
+      </tbody>
+    </table>
     {% else %}
-      <p>Tidak ada alamat IP yang aktif dalam rentang yang diberikan.</p>
+    <p>No active IP addresses found.</p>
     {% endif %}
-    <a href="/">Kembali ke halaman beranda</a>
   </body>
 </html>
