@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pemindai Alamat IP LAN</title>
-  </head>
-  <body>
-    <h1>Pemindai Alamat IP LAN</h1>
-    <form action="/scan_ips" method="POST">
-      <label for="subnet">Alamat IP subnet:</label>
-      <input type="text" name="subnet" value="192.168.0.">
-      <br><br>
-      <label for="start">Nomor IP awal:</label>
-      <input type="number" name="start" value="1">
-      <br><br>
-      <label for="end">Nomor IP akhir:</label>
-      <input type="number" name="end" value="255">
-      <br><br>
-      <input type="submit" value="Pindai">
-    </form>
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<title>LAN IP Scanner</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>LAN IP Scanner</h1>
+		<form action="{{ url_for('scan_ips') }}" method="POST">
+			<label for="subnet">Subnet:</label>
+			<input type="text" id="subnet" name="subnet" placeholder="192.168.1.">
+			<label for="start">Start:</label>
+			<input type="number" id="start" name="start" placeholder="1">
+			<label for="end">End:</label>
+			<input type="number" id="end" name="end" placeholder="255">
+			<button type="submit">Scan</button>
+		</form>
+	</div>
+</body>
 </html>

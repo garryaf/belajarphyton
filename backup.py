@@ -5,7 +5,7 @@ import mysql.connector
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def beranda():
     return render_template('beranda.html')
 
 @app.route('/backup', methods=['POST'])
